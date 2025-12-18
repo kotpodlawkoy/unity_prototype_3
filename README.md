@@ -1,5 +1,5 @@
 # Описание
-**Проект соответствует 3-ой миссии [Unity Junior Programmer roadmap](https://learn.unity.com/pathway/junior-programmer) на Unity Learn**
+**Проект соответствует 3-ей миссии [Unity Junior Programmer roadmap](https://learn.unity.com/pathway/junior-programmer) на Unity Learn**
 
 # Использованные технологии
 * Unity Editor v6000.2.11f1
