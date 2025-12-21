@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool _isOnGround = true;
+    [SerializeField] private bool _isOnGround = true;
     private Rigidbody _playerRB;
     private Animator playerAnimator;
 
@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudioSource;
     public AudioClip jumpSound, explosionSound;
 
+    static private bool _isGravityModifiered = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Start ()
     {
         _playerRB = gameObject.GetComponent < Rigidbody > ();
-        Physics.gravity *= gravityModifier;
+        if ( ! _isGravityModifiered ) { Physics.gravity *= gravityModifier; _isGravityModifiered = true; }
 
         playerAnimator = GetComponent < Animator > ();
 
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
         if ( Input.GetKeyDown ( KeyCode.Space ) && _isOnGround && !isGameOver )
         {
             _playerRB.AddForce ( Vector3.up * jumpForce, ForceMode.Impulse );
+            Debug.Log ("Done!");
             _isOnGround = false;
 
             playerAudioSource.PlayOneShot ( jumpSound );
