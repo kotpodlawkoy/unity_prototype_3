@@ -8,7 +8,7 @@
   * Unity tool [kotpodlawkoy sln generator](https://github.com/kotpodlawkoy/kotpodlawkoy.sln.csproj.generator)
  
 # Ссылка на web build
-[]()
+[паиграно]()
 
 # Проведённая работа
 В контексте данного проекта были реализованы:
